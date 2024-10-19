@@ -1,0 +1,39 @@
+<p>data-binding works!</p>
+
+<div class="row">
+  <div class="col-4">One Way from .ts to .html</div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="row">
+      <div class="col-4 bg-success">
+        <h4>{{ courseName }}</h4>
+      </div>
+      <div class="col-4">
+        <h4>{{ inputValue }}</h4>
+        <input
+          type="text"
+          value="{{ inputValue }}"
+          placeholder="Enter Any Value Here"
+        />
+        <input type="{{ inputType }}" />
+      </div>
+      <div class="col-4">
+        <h4></h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div>
+<div>
+  <div class="col-6">
+    <h2>{{ firstName() }}</h2>
+    <!-- <button (click)="changeSignalName()">Change Signal Name From Here</button> -->
+    <button (click)="changeSignalName()">
+      Change Signal Name {{ firstName() }} Here
+    </button>
+  </div>
+</div>
