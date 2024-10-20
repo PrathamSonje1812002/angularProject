@@ -1,0 +1,73 @@
+<h1>structure-directives works!</h1>
+
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+  <h1>structure-directives works!</h1>
+  <p>*ngIf, *ngFor</p>
+</div>
+
+<div class="row pt-3">
+  <div class="col-3">
+    <div class="bg-danger p-3 text-center" *ngIf="isDivVisible">
+      <h4>Div - 1</h4>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="bg-success p-3 text-center" *ngIf="isDivToggle">
+      <h4>Div - 2</h4>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="bg-secondary p-3 text-center" *ngIf="num1 === num2">
+      <h4>Div - 3</h4>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="bg-primary p-3 text-center" *ngIf="selectedCountry === 'India'">
+      <h4>Div - 4</h4>
+    </div>
+  </div>
+</div>
+<div class="row pt-3">
+  <div class="col-3 text-center">
+    <button class="btn btn-danger" (click)="hideDiv()">Hide</button>
+    <button class="btn btn-primary mx-2" (click)="showDiv()">Show</button>
+  </div>
+  <div class="col-3 text-center">
+    <button class="btn btn-success" (click)="divToggle()">Toggle</button>
+  </div>
+
+  <div class="col-3">
+    <div class="d-flex align-items-center">
+      <input type="text" placeholder="Num-1" class="w-50" [(ngModel)]="num1" />
+      <input type="text" placeholder="Num-2" class="w-50" [(ngModel)]="num2" />
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="d-flex align-items-center">
+      <input type="checkbox" class="w-50 bg-primary" (click)="checkBox()" />
+      <select [(ngModel)]="selectedCountry">
+        <option value="">Select State</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+        <option value="Shrilanka">Shrilanka</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <ul>
+      <li *ngFor="let city of cityArray">{{ city }}</li>
+    </ul>
+  </div>
+  <div class="col-3">
+    <div *ngFor="let city of cityArray">{{ city }}</div>
+  </div>
+  <div class="col-3">
+    <select name="" id="">
+      <option value="" *ngFor="let city of cityArray">{{ city }}</option>
+    </select>
+  </div>
+  <div class="col-3"></div>
+</div>
